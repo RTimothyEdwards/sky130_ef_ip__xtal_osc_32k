@@ -1,0 +1,61 @@
+** sch_path: /home/tim/projects/efabless/sky130_ef_ip__xtal_osc_32k/xschem/sky130_ef_ip__xtal_osc_32k.sch
+.subckt sky130_ef_ip__xtal_osc_32k in out avdd avss dvss dvdd ena dout boost
+*.PININFO in:I out:O avdd:B avss:B dvss:B dvdd:B ena:I dout:O boost:I
+XM1 inb in net8 avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM2 inb in net7 avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM3 outb inb net6 avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM4 outb inb net9 avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM5 net3 net1 dvss dvss sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 m=1
+XM6 dout0 net1 dvdd dvdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 m=1
+XR2 out out0 avss sky130_fd_pr__res_high_po_0p69 L=456 mult=1 m=1
+XR3 out0 in avss sky130_fd_pr__res_xhigh_po_0p35 L=2565 mult=1 m=1
+XM9 out0 outb net5 avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM10 out0 outb net4 avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM11 net1 outb dvdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM12 net2 outb avss avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+D1 in avdd sky130_fd_pr__diode_pd2nw_05v5 area=2.025e11 pj=1.8e6
+D2 avss in sky130_fd_pr__diode_pw2nd_05v5 area=2.025e11 pj=1.8e6
+XR8 dout0 dout dvss sky130_fd_pr__res_high_po_0p69 L=10 mult=1 m=1
+XM13 net1 ena_h net2 avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM14 dout0 ena net3 dvss sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 m=1
+XM24 net7 pbias avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM25 net6 pbias avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM26 net5 pbias avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM27 net4 nbias avss avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM28 net9 nbias avss avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM29 net8 nbias avss avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM21 nbias nbias avss avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM22 pbias pbias avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XR1 net10 avdd avss sky130_fd_pr__res_xhigh_po_0p35 L=3555 mult=1 m=1
+XM23 net10 ena_h nbias avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM30 net11 nbias avss avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM31 in enb_h avss avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM32 out0 enb_h avss avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM33 nbias enb_h avss avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM34 pbias ena_h avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM35 dout0 enb dvss dvss sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 m=1
+XM36 pbias ena_h net11 avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XR4 net12 avdd avss sky130_fd_pr__res_xhigh_po_0p35 L=850 mult=1 m=1
+XM46 net12 boost_h nbias avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+x1 dvdd ena_h avdd enb_h ena dvss avss enb level_shifter
+x2 dvdd boost_h avdd boostb_h boost dvss avss boostb level_shifter
+D3 dvss ena sky130_fd_pr__diode_pw2nd_05v5 area=2.025e11 pj=1.8e6
+D4 dvss boost sky130_fd_pr__diode_pw2nd_05v5 area=2.025e11 pj=1.8e6
+.ends
+
+* expanding   symbol:  level_shifter.sym # of pins=8
+** sym_path: /home/tim/projects/efabless/sky130_ef_ip__xtal_osc_32k/xschem/level_shifter.sym
+** sch_path: /home/tim/projects/efabless/sky130_ef_ip__xtal_osc_32k/xschem/level_shifter.sch
+.subckt level_shifter dvdd out_h avdd outb_h in_l dvss avss inb_l
+*.PININFO in_l:I dvdd:B avdd:B dvss:B avss:B out_h:O outb_h:O inb_l:O
+XM7 inb_l in_l dvdd dvdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 m=1
+XM8 inb_l in_l dvss dvss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
+XM15 out_h outb_h net1 avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM16 outb_h out_h net2 avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM17 outb_h in_l avss avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM18 out_h inb_l avss avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM19 net1 out_h avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+XM20 net2 outb_h avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=0.42 nf=1 m=1
+.ends
+
+.end
